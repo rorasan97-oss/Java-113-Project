@@ -2,7 +2,7 @@ public class Lab
 {
 private boolean hasProject;
 public Lab (boolean hasProject , String courseID , String courseName , double Grade){
-super (String courseID , String courseName , double Grade);
+super (courseID , courseName , Grade);
 this.hasProject = hasProject;
 }
 @Override
