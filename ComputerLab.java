@@ -14,5 +14,7 @@ double totalGrade = super.calculateGrade();
 if (computerDamage == true)
 totalGrade = totalGrade - 5;
 return totalGrade;
+ else
+ return totalGrade;
 }
 }
