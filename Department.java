@@ -36,7 +36,7 @@ public class Department {
     	 if( indexOfTheCourse!=-1)
     	 { 
     		for(int i= indexOfTheCourse;i<numOfCourses-1;i++)
-    			clist[ indexOfTheCourse]= clist[ indexOfTheCourse+1];
+    			clist[ i]= clist[ i+1];
     		clist[--numOfCourses]=null;
     			return true;
          }	 
