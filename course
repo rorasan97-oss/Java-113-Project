@@ -1,5 +1,3 @@
-package javaphase1;
-
 public abstract class Course {
 private String courseID;
 private String courseName;
@@ -45,6 +43,13 @@ public String toString() {
     }
     
     return str;
+}
+public Student searchStudent(String studentID) {
+	for(int i = 0 ; i < StudentCount ; i++)
+        if (students[i].getstudentID().equals(studentID)) {
+            return students[i];
+        }
+    return null;
 }
 public String getCourseID() {
 	return courseID;
