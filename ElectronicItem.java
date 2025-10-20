@@ -11,7 +11,6 @@ public String toString(){
 return super.toString() + " \n The year of release of the electronic Item: " + yearOfRelease + " The brand of the electronic Item: " + brand; }
 public double calculatePrice(){
 double totalprice = price;
-totalprice = price;
 if (yearOfRelease < 2015)
 totalprice = totalprice * 0.50;
 return totalprice;
