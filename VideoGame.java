@@ -1,11 +1,18 @@
+package project;
+
 public class VideoGame extends Products
 {
 private boolean Status;
 private String type;
-public VideoGame (boolean Status, String type, String PrdctName , double price){
-super (PrdctName , price);
+public VideoGame (boolean Status, String type, String ProductName , double price){
+super (ProductName , price);
 this.Status = Status;
 this.type = type;
+}
+public VideoGame(VideoGame v) {
+	super(v.ProductName, v.price);
+	this.Status = v.Status;
+	this.type = v.type;
 }
 @Override
 public String toString(){

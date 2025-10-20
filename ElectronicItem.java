@@ -1,7 +1,8 @@
+package project;
 public class ElectronicItem extends Products {
 private int yearOfRelease ;
 private String brand;
- public ElectronicItem (int yearOfRelease , String brand , String PrdctName , double price ){
+public ElectronicItem (int yearOfRelease , String brand , String PrdctName , double price ){
 super ( PrdctName , price);
 this.yearOfRelease = yearOfRelease;
 this.brand = brand;
