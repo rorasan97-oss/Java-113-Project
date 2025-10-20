@@ -11,7 +11,7 @@ this.type = type;
 public String toString(){
 return super.toString() + ", Game Type:" + type + " is the Video Game new? " + ( Status? " New Game": "");
 }
-public double calculateGrade(){
+public double calculateprice(){
 double totalprice = price;
 if ( type.equalsIgnoreCase("digital")){
 totalprice = totalprice - 0.50 * totalprice;
