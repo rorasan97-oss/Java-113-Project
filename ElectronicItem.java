@@ -2,13 +2,13 @@ public class ElectronicItem extends Products {
 private int yearOfRelease ;
 private String brand;
  public ElectronicItem (int yearOfRelease , String brand , String PrdctName , double price ){
-super (String PrdctName , double price);
+super ( PrdctName , price);
 this.yearOfRelease = yearOfRelease;
 this.brand = brand;
  }
 @Override
 public String toString(){
-return super.toString() + " \n The year of release of the electronic Item: " + yearOfRelease + " The brand of the electronic Item: " + brand }
+return super.toString() + " \n The year of release of the electronic Item: " + yearOfRelease + " The brand of the electronic Item: " + brand; }
 public double calculateGrade(){
 double totalprice = price;
 totalprice = price;
