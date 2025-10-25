@@ -20,15 +20,13 @@ public class Purchase {
   	 {
   		 if(p instanceof VideoGame)
   		productsList[numOFProducts++]=new VideoGame ((VideoGame) p);
-  		 return true;
-  	 }
-  	 else
+		 else
 			 if(p instanceof ElectronicItem)
 			 {
 		  		productsList[numOFProducts++]=new ElectronicItem ((ElectronicItem) p);
-		 return true;
-			 }
-		 else 
+  		 return true;
+  	 }
+  	 else
   		 return false;
    }
    public int searchProducts(String PrdctName) 
@@ -74,3 +72,4 @@ public class Purchase {
    }
    
 }
+
