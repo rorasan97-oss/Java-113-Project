@@ -1,5 +1,6 @@
 public class VideoGame extends Products
 {
+private boolean Status;
 private char type;
 public VideoGame (char type, String ProductName , double price){
 super (ProductName , price);
@@ -9,7 +10,7 @@ public VideoGame(VideoGame v) {
 	super(v.ProductName, v.price);
 	this.type = v.type;
 }
-@Override
+
 public String toString(){
 return super.toString() + ", Game Type:" +"("+ type+")";
 }
@@ -26,5 +27,4 @@ this.type = type;
 public char getType(){
 return type;
 }
-
 }

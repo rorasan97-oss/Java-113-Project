@@ -1,5 +1,5 @@
 public class ElectronicItem extends Products {
-private int yearOfRelease ;
+protected  int yearOfRelease ;
 
 public ElectronicItem()
 {
@@ -17,7 +17,7 @@ public  ElectronicItem( ElectronicItem e) {
 	this.yearOfRelease = e.yearOfRelease;
 
 }
-@Override
+
 public String toString(){
 return super.toString() + " \n The year: " +"(" +yearOfRelease+")"; }
 

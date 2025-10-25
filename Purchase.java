@@ -6,7 +6,7 @@ public class Purchase {
    public Purchase(Customer costumer)
    {
 	   this.costumer = new Customer (costumer.getCustomerID(),costumer.getCustomerName());
-	   productsList = new Products[16];
+	   productsList = new Products[4];
 	   numOFProducts =0;
 	  
    }
@@ -15,10 +15,10 @@ public boolean addProducts(Products p)
     if (numOFProducts < productsList.length) {
         if (p instanceof VideoGame)
             productsList[numOFProducts++] = new VideoGame((VideoGame) p);
-        else if (p instanceof ElectronicItem)
-            productsList[numOFProducts++] = new ElectronicItem((ElectronicItem) p);
         else if (p instanceof Console) 
             productsList[numOFProducts++] = new Console((Console) p);
+        else if (p instanceof ElectronicItem)
+            productsList[numOFProducts++] = new ElectronicItem((ElectronicItem) p);
 
         return true;
     } 

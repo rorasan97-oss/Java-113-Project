@@ -84,11 +84,12 @@ System.out.println(" ================== Main Menu ===================");
                           int storage = input.nextInt();
                           System.out.println("(Y) with CD Port or (N) without CD Port");
                           char cd = input.next().charAt(0);
-                          if(year == 3)
-                        	  year =2013;
+                          if(storage == 1)
+                        	  storage =256;
                           else 
-                        	  if(year == 0)
-                            	  year =2020;
+                        	  if(storage == 2)
+                        		  storage =512;
+             
                           Console e1 = new Console(storage , cd , year ,"Console", 1000 );
                           if(purchase.addProducts(e1))
                           System.out.println("added successfully");
@@ -117,7 +118,7 @@ System.out.println(" ================== Main Menu ===================");
                       System.out.println("What type of product do you want to remove?");
                       System.out.println("1 - Mario or 2 - Sonic or 3 - Controller 4 - Console");
                       int kind = input.nextInt();
-                      while (kind != 1 && kind != 2 && kind != 3) {
+                      while (kind != 1 && kind != 2 && kind != 3&& kind != 4) {
                       System.out.println(" Incorrect input , rewrite again");
                       kind = input.nextInt();}
                       if(kind == 1){
@@ -141,24 +142,36 @@ System.out.println(" ================== Main Menu ===================");
                        System.out.println("What type of product do you want to search?");
                       System.out.println("1 - Mario or 2 - Sonic or 3 - Controller 4 - Console");
                       int search = input.nextInt();
-                      while (search != 1 && search != 2 && search != 3) {
+                      while (search != 1 && search != 2 && search != 3&& search != 4) {
                       System.out.println(" Incorrect input , rewrite again");
                       search = input.nextInt();}
                       if(search == 1){
-                      if(purchase.searchProducts("Mario") != -1)
-                      System.out.println( "Item found");
-                      }
-                      else if(search == 2) {
-                      if(purchase.searchProducts("Sonic") != -1)
-                      System.out.println("Item found"); }
-                      else if(search == 3) {
-                      if(purchase.searchProducts("Controller") != -1)
-                      System.out.println("Item found"); }
-                      else if(search == 4) {
-                      if(purchase.searchProducts("Console") != -1)
-                      System.out.println("Item found"); }
-                      else
-                      System.out.println("the item is not found"); 
+                            if(purchase.searchProducts("Mario") != -1)
+                             System.out.println( "Item found");
+                      } else 
+                     	 if(search == 2) {
+                             if(purchase.searchProducts("Sonic") != -1)
+                             System.out.println("Item found"); 
+                             else
+                                 System.out.println("Not found");
+                             } else
+                           	  if(search == 3) {
+                                  if(purchase.searchProducts("Controller") != -1)
+                                     System.out.println("Item found");
+                                  else
+                                      System.out.println("Not found");
+                                  }else 
+                                	  if(search == 4) {
+                                          if(purchase.searchProducts("Console") != -1)
+                                          System.out.println("Item found"); 
+                                          else
+                                              System.out.println("Not found");
+                                          }
+                      
+                        
+                   
+                      
+                     
                       break; 
                       
                       case 4: 

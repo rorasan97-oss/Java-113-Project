@@ -3,6 +3,7 @@ public class Console extends ElectronicItem
   private int Storage;
  private  char CDPort;
  
+ 
  public Console(int Storage , char CDPort , int yearOfRelease ,String ProductName , double price)
  {
     super(yearOfRelease,ProductName,price);
@@ -12,6 +13,7 @@ public class Console extends ElectronicItem
  public Console(Console c)
  {
  
+	   super(c.yearOfRelease,c.ProductName,c.price);
 	 this.Storage = c.Storage;
 	 this.CDPort= c.CDPort;
 
@@ -24,16 +26,17 @@ public class Console extends ElectronicItem
  }
  public double calculatePrice()
  {
+	 double totalPrice =0;
 	 
 	 if(Storage==256)
-		 price +=super.calculatePrice()+50;
+		 totalPrice  +=super.calculatePrice()+50;
 	 else
 		 if(Storage==512)
-			 price+=super.calculatePrice()+75;
+			 totalPrice +=super.calculatePrice()+75;
 
 	 if(hasCDPort())
-		 price+=super.calculatePrice()+60;
-	 return  price;
+		 totalPrice+=super.calculatePrice()+60;
+	 return  totalPrice;
  }
  public String toString()
  { 
