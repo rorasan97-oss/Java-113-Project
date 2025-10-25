@@ -16,7 +16,7 @@ public VideoGame(VideoGame v) {
 }
 @Override
 public String toString(){
-return super.toString() + ", Game Type:" + type + " is the Video Game new? " + ( Status? " New Game": "");
+return super.toString() + ", Game Type:" + type + " is the Video Game new? " + ( Status? " New Game": "UsedGame");
 }
 public double calculatePrice(){
 double totalprice = price;
@@ -40,4 +40,5 @@ return type;
 public boolean getStatus(){
 return Status;
 }
+
 }
