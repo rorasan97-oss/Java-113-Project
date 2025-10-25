@@ -1,5 +1,3 @@
-package project;
-
 public class Purchase {
    private int PurchaseID;
    private Products[] productsList;
@@ -9,38 +7,43 @@ public class Purchase {
    public Purchase(Customer costumer)
    {
 	   this.costumer = new Customer (costumer.getCustomerID(),costumer.getCustomerName());
-	   productsList = new Products[5];
+	   productsList = new Products[4];
 	   numOFProducts =0;
 	   PurchaseID++;
 	  
    }
-   public boolean addProducts(Products p)
-   {
-  	 if(numOFProducts < productsList.length)
-  	 {
-  		 if(p instanceof VideoGame)
-  		productsList[numOFProducts++]=new VideoGame ((VideoGame) p);
-		 else
-			 if(p instanceof ElectronicItem)
-			 {
-		  		productsList[numOFProducts++]=new ElectronicItem ((ElectronicItem) p);
-  		 return true;
-  	 }
-  	 else
-  		 return false;
-   }
-   public int searchProducts(String PrdctName) 
+public boolean addProducts(Products p)
+{
+    if (numOFProducts < productsList.length) {
+        if (p instanceof VideoGame)
+            productsList[numOFProducts++] = new VideoGame((VideoGame) p);
+        else if (p instanceof ElectronicItem)
+            productsList[numOFProducts++] = new ElectronicItem((ElectronicItem) p);
+           /*     else if (p instanceof Console)
+            productsList[numOFProducts++] = new Console((Console) p); */
+
+            
+
+        return true;
+    } 
+    else {
+    System.out.println("Your cart is full");
+        return false;
+    }
+}
+
+   public int searchProducts(String ProductName) 
    {
   	 for(int i=0;i<numOFProducts;i++)
   	 {
-  		 if(productsList[i].getProductName().equals(PrdctName))
+  		 if(productsList[i].getProductName().equals(ProductName))
   			 return i;
   	 }
   	 return -1;
    }
-   public boolean removeProducts(String PrdctName)
+   public boolean removeProducts(String ProductName)
    {
-  	 int indexOfTheProduct = searchProducts(PrdctName);
+  	 int indexOfTheProduct = searchProducts(ProductName);
   	 if(indexOfTheProduct !=-1)
   	 { 
   		for(int i= indexOfTheProduct;i<numOFProducts-1;i++)
@@ -54,7 +57,7 @@ public class Purchase {
    {
 	   double TotalPrice =0;
 	   for(int i =0;i<numOFProducts;i++)
-		   TotalPrice += productsList[i].getPrice() ;
+		   TotalPrice += productsList[i].calculatePrice() ;
 	   return TotalPrice;
    }
    public String toString()
@@ -70,7 +73,9 @@ public class Purchase {
 	return str;
 	
    }
-   
+   public int getNumOfProducts() {
+    return numOFProducts;
 }
 
-
+   
+}
