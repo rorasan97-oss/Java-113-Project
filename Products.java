@@ -1,5 +1,3 @@
-package project;
-
 public abstract class Products {
 protected String ProductName ;
 protected double price ;
