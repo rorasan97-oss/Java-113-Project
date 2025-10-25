@@ -2,11 +2,22 @@ package project;
 public class ElectronicItem extends Products {
 private int yearOfRelease ;
 private String brand;
+public ElectronicItem()
+{
+	yearOfRelease = 0;
+	brand = "";
+
+}
 public ElectronicItem (int yearOfRelease , String brand , String PrdctName , double price ){
 super ( PrdctName , price);
 this.yearOfRelease = yearOfRelease;
 this.brand = brand;
  }
+public  ElectronicItem( ElectronicItem e) {
+	super(e.ProductName, e.price);
+	this.yearOfRelease = e.yearOfRelease;
+	this.brand = e.brand;
+}
 @Override
 public String toString(){
 return super.toString() + " \n The year of release of the electronic Item: " + yearOfRelease + " The brand of the electronic Item: " + brand; }

@@ -5,9 +5,8 @@ public class Console extends ElectronicItem
   private int Storage;
  private  boolean hasCDProt;
  
- public Console(int yearOfRelease , String brand , String PrdctName , double price ,int Storage , boolean hasCDProt )
+ public Console(int Storage , boolean hasCDProt )
  {
-	 super(yearOfRelease , brand ,  PrdctName ,  price );
 	 this.Storage = Storage;
 	 this.hasCDProt= hasCDProt;
  }

@@ -23,6 +23,12 @@ public class Purchase {
   		 return true;
   	 }
   	 else
+			 if(p instanceof ElectronicItem)
+			 {
+		  		productsList[numOFProducts++]=new ElectronicItem ((ElectronicItem) p);
+		 return true;
+			 }
+		 else 
   		 return false;
    }
    public int searchProducts(String PrdctName) 
@@ -51,7 +57,7 @@ public class Purchase {
 	   double TotalPrice =0;
 	   for(int i =0;i<numOFProducts;i++)
 		   TotalPrice += productsList[i].getPrice() ;
-	   return TotalPrice;
+	   return 0;
    }
    public String toString()
    {
@@ -68,4 +74,3 @@ public class Purchase {
    }
    
 }
-

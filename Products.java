@@ -3,6 +3,11 @@ package project;
 public abstract class Products {
 protected String ProductName ;
 protected double price ;
+public Products()
+{
+	ProductName = "" ;
+    price = 0 ;
+}
 public Products(String ProductName , double price) {
 	this.ProductName = ProductName ;
     this.price = price ;
