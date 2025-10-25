@@ -51,7 +51,7 @@ public class Purchase {
 	   double TotalPrice =0;
 	   for(int i =0;i<numOFProducts;i++)
 		   TotalPrice += productsList[i].getPrice() ;
-	   return 0;
+	   return TotalPrice;
    }
    public String toString()
    {
@@ -68,3 +68,4 @@ public class Purchase {
    }
    
 }
+
