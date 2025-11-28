@@ -74,14 +74,12 @@ public class Purchase implements Serializable {
         if (headProduct == null)
             return false;
 
-        // case 1: the product is in the first node
         if (headProduct.getData().getProductName().equals(ProductName)) {
             headProduct = headProduct.getNext();
             numOFProducts--;
             return true;
         }
 
-        // case 2: product is in the rest of the list
         ProductNode prev = headProduct;
         ProductNode current = headProduct.getNext();
 
@@ -181,3 +179,4 @@ public class Purchase implements Serializable {
         return null;
     }
 }
+
