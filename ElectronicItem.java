@@ -1,5 +1,10 @@
-public class ElectronicItem extends Products {
-protected  int yearOfRelease ;
+
+package gamestore;
+import java.io.*;
+
+
+public class ElectronicItem extends Products implements Serializable{
+    protected  int yearOfRelease ;
 
 public ElectronicItem()
 {
@@ -34,5 +39,4 @@ this.yearOfRelease = yearOfRelease;
 public int getyearOfRelease(){
 return yearOfRelease;
 }
-
 }

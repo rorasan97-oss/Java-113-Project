@@ -1,5 +1,10 @@
-public class Purchase {
-   private Products[] productsList;
+
+package gamestore;
+
+import java.io.*;
+
+public class Purchase implements Serializable{ 
+    private Products[] productsList;
    private int numOFProducts;
    private Customer costumer;
     
@@ -70,5 +75,63 @@ public boolean addProducts(Products p)
 	
    }
 
+
+public void saveToFile() throws IOException {
+    ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("receipt.ser"));
+
+    out.writeObject(this);   // save whole purchase object
+    out.close();
+} 
+public Purchase loadFromFile() {
+    try {
+        // Read binary file
+        ObjectInputStream in =
+            new ObjectInputStream(new FileInputStream("receipt.ser"));
+
+        Purchase loadedPurchase = (Purchase) in.readObject();
+        in.close();
+
+        // Create readable text file
+        File txt = new File("receipt_readable.txt");
+        FileOutputStream fos = new FileOutputStream(txt);
+        PrintWriter pr = new PrintWriter(fos);
+
+        pr.println("======== LOADED RECEIPT ========");
+        pr.println("Customer Name: " + loadedPurchase.costumer.getCustomerName());
+        pr.println("Customer ID: " + loadedPurchase.costumer.getCustomerID());
+        pr.println("--------------------------------");
+
+        for (int i = 0; i < loadedPurchase.numOFProducts; i++) {
+            if (loadedPurchase.productsList[i] != null) {
+                pr.println(loadedPurchase.productsList[i]);
+            }
+        }
+
+        pr.println("--------------------------------");
+        pr.println("Total Products: " + loadedPurchase.numOFProducts);
+        pr.println("Total Price: " + loadedPurchase.calculateTotalPrice());
+        pr.println("================================");
+
+        pr.close();
+
+        System.out.println("A readable receipt was created: receipt_readable.txt");
+
+        return loadedPurchase;
+
+    } catch (FileNotFoundException e) {
+        System.out.println("No previous receipt saved.");
+    } catch (IOException e) {
+        System.out.println("Error reading file: " + e.getMessage());
+    } catch (ClassNotFoundException e) {
+        System.out.println("Class mismatch.");
+    }
+
+    return null;
+}
+
+
+   
+   
+   
    
 }

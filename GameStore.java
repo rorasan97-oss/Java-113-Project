@@ -1,28 +1,45 @@
+
+package gamestore;
+
+import java.io.*;
 import java.util.Scanner;
-public class GameStore{
- public static void main(String[] args) {
- Scanner input = new Scanner(System.in);
+
+
+public class GameStore {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 System.out.println("_________ Welcome to our Games Shop _________");
 System.out.println("Enter your name and your ID respectively: ");
 String name = input.next();
 String ID = input.next();
 Customer customer = new Customer(ID , name);
 Purchase purchase = new Purchase(customer);
-int choice ; 
+
+
+
+
+int choice = 0 ; 
 do{
 System.out.println(" ================== Main Menu ===================");
          System.out.println("1 - add Product ");
          System.out.println("2 - remove product");
          System.out.println("3 - search product ");
-         System.out.println("4 - Display invoice  ")  ;     
-         System.out.println("5- Exit ");
+         System.out.println("4 - Display invoice  ")  ; 
+         System.out.println("5- Save receipt to file  ")  ; 
+         System.out.println("6- Load previous receipt  ")  ; 
+         System.out.println("7- Exit ");
          System.out.println("-------------------------------------------------");
          System.out.println("  choose an option...");
-         choice = input.nextInt();
-         while (choice != 1 && choice != 2 && choice != 3 && choice!= 4  && choice !=5){
-          System.out.println(" Incorrect input , rewrite again");
-          choice = input.nextInt();
-}
+         
+         try {
+              choice = input.nextInt();
+              validateMenuChoice(choice);
+              } catch (InvalidProductException e) {
+              System.out.println(e.getMessage());
+              continue; // restart loop
+              }
+         
          switch(choice) {
          case 1:
          System.out.println("What type of product do you want to add?");
@@ -184,34 +201,61 @@ System.out.println(" ================== Main Menu ===================");
                      
                       break; 
                       
-                      case 4: 
+                                            case 4: 
                       System.out.println("\n========== PURCHASE RECEIPT ==========");
                       System.out.println("--------------------------------------");
                       System.out.println(purchase.toString());
                       System.out.println("======================================");
                       System.out.println("We will be happy to see you again!\nhave a nice day^-^");
     break;
+
+                      
     
     
                       case 5:
-                    	  System.out.println("We will be happy to see you again!\nhave a nice day^-^");
-                    	  break;
+                    	      try {
+                                   purchase.saveToFile();
+                                   System.out.println("Receipt saved successfully!");
+                                  } catch (IOException e) {
+                                        System.out.println("Error saving receipt: " + e.getMessage());
+                                   }
+                      break;
                       
+                                        
+                      case 6:
+                         Purchase loaded = purchase.loadFromFile();
+                         System.out.println(loaded);
 
+                           if (loaded != null) {
+                             System.out.println("=== Loaded Previous Receipt ===");
+                               System.out.println(loaded);
+                                }
+                       break;
+                       
+                       case 7:
+    // EXIT
+    System.out.println("We will be happy to see you again! Have a nice day ^-^");
+    break;
 
-
-              
-         }
+default:
+    System.out.println("Invalid input, please choose between 1 and 7.");
+}
                      
                       
 
 
-}while(choice !=5);
+}while(choice !=7);
 
 
 
 
+    }
+public static void validateMenuChoice(int choice) throws InvalidProductException {
+    if (choice >= 1 && choice <= 7)
+        return;
 
-
+    throw new InvalidProductException("Menu choice must be between 1 and 7.");
 }
+
+    
 }

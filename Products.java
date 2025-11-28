@@ -1,5 +1,10 @@
-public abstract class Products {
-protected String ProductName ;
+
+package gamestore;
+
+import java.io.*;
+
+public abstract class Products implements Serializable {
+    protected String ProductName ;
 protected double price ;
 public Products()
 {
@@ -31,5 +36,4 @@ public double getPrice() {
 public void setPrice(double price) {
 	this.price = price;
 }
-
 }

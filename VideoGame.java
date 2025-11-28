@@ -1,6 +1,10 @@
-public class VideoGame extends Products
-{
-private char type;
+
+package gamestore;
+import java.io.*;
+
+
+public class VideoGame extends Products implements Serializable {
+   private char type;
 public VideoGame (char type, String ProductName , double price){
 super (ProductName , price);
 this.type = type;
@@ -25,5 +29,5 @@ this.type = type;
 }
 public char getType(){
 return type;
-}
+} 
 }

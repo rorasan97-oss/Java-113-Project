@@ -1,5 +1,8 @@
-public class Customer {
-	    private String customerID;
+package gamestore;
+import java.io.*;
+
+public class Customer implements Serializable{
+ private String customerID;
 	    private String customerName;
 
 	    public Customer(String customerID, String customerName) {
@@ -28,5 +31,5 @@ public class Customer {
    
 	    public String toString() {
 	        return "Customer ID: " + customerID + ", Name: " + customerName;
-	    }
-	}
+	    }   
+}

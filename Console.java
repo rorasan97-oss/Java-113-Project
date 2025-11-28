@@ -1,6 +1,9 @@
-public class Console extends ElectronicItem
-{
-  private int Storage;
+
+package gamestore;
+import java.io.*;
+
+public class Console extends ElectronicItem implements Serializable{
+ private int Storage;
  private  char CDPort;
  
  
@@ -41,5 +44,5 @@ public class Console extends ElectronicItem
  public String toString()
  { 
 	 return super.toString()+" ,The storage:"+"("+Storage+")"+" ,CD port:"+"("+CDPort+")";
- }
+ }   
 }
