@@ -32,13 +32,19 @@ System.out.println(" ================== Main Menu ===================");
          System.out.println("-------------------------------------------------");
          System.out.println("  choose an option...");
          
-         try {
-              choice = input.nextInt();
-              validateMenuChoice(choice);
-              } catch (InvalidProductException e) {
-              System.out.println(e.getMessage());
-              continue; // restart loop
-              }
+         boolean valid = false;
+
+         while (!valid) {
+          try {
+        choice = input.nextInt();
+        validateMenuChoice(choice);
+        valid = true;  // input is OK, exit the loop
+          } catch (InvalidProductException e) {
+        System.out.println(e.getMessage());
+        System.out.println("Please enter a correct menu option:");
+          }
+             }
+
          
          switch(choice) {
          case 1:
