@@ -608,7 +608,7 @@ public class GameStore extends JFrame implements ActionListener {
                 		if(ElectronicItem.isSelected())
                 		{
                 			JRadioButton Controller = new JRadioButton("Controller (500$)");
-                    		JRadioButton Console = new JRadioButton("Console(100$)");
+                    		JRadioButton Console = new JRadioButton("Console(1000$)");
                             ButtonGroup items1 =  new  ButtonGroup();
                             items1.add(Console);
                             items1.add(Controller);
