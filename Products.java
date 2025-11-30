@@ -1,6 +1,3 @@
-
-package gamestore;
-
 import java.io.*;
 
 public abstract class Products implements Serializable {

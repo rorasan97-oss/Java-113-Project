@@ -1,6 +1,3 @@
-
-package gamestore;
-
 import java.io.*;
 
 public class Purchase implements Serializable { 
@@ -180,5 +177,4 @@ public class Purchase implements Serializable {
         return null;
     }
 }
-
 

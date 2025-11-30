@@ -1,5 +1,3 @@
-
-package gamestore;
 import java.io.*;
 
 
