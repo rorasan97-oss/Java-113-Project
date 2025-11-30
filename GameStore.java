@@ -516,7 +516,7 @@ public class GameStore extends JFrame implements ActionListener {
                 	if(VideoGame.isSelected())
                 	{
                 		JRadioButton Mario = new JRadioButton("Mario (50$)");
-                		JRadioButton Sonic = new JRadioButton("Sonic(50$)");
+                		JRadioButton Sonic = new JRadioButton("Sonic (30$)");
                         ButtonGroup items1 =  new  ButtonGroup();
                         items1.add(Mario);
                         items1.add(Sonic);
@@ -581,7 +581,7 @@ public class GameStore extends JFrame implements ActionListener {
                             {
                             	if(physical.isSelected())
                             	{
-                            		VideoGame v3 = new VideoGame('P', "Sonic", 50);
+                            		VideoGame v3 = new VideoGame('P', "Sonic", 30);
                                     if (purchase1.addProducts(v3))
                                     	JOptionPane.showMessageDialog(this,"Added successfully");
 
@@ -591,7 +591,7 @@ public class GameStore extends JFrame implements ActionListener {
                             	else
                             		if(digital.isSelected())
                                 	{
-                                		VideoGame v4 = new VideoGame('D', "Sonic", 50);
+                                		VideoGame v4 = new VideoGame('D', "Sonic", 30);
                                         if (purchase1.addProducts(v4))
                                         	JOptionPane.showMessageDialog(this,"Added successfully");
 
@@ -920,3 +920,4 @@ public class GameStore extends JFrame implements ActionListener {
 
 	
 }
+
