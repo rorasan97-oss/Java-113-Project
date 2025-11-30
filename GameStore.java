@@ -617,7 +617,7 @@ public class GameStore extends JFrame implements ActionListener {
                             itemsPanel1.add(new JLabel("What ElectronicItem would you like to add?"));
                             itemsPanel1.add(Console);
                             itemsPanel1.add(Controller);
-                            int show1 = JOptionPane.showConfirmDialog(this,itemsPanel1,"games",JOptionPane.OK_CANCEL_OPTION);
+                            int show1 = JOptionPane.showConfirmDialog(this,itemsPanel1,"Electron icItems",JOptionPane.OK_CANCEL_OPTION);
                             if(show1==JOptionPane.OK_OPTION)
                             {
                             	if(Controller.isSelected())
