@@ -516,7 +516,7 @@ public class GameStore extends JFrame implements ActionListener {
                 	if(VideoGame.isSelected())
                 	{
                 		JRadioButton Mario = new JRadioButton("Mario (50$)");
-                		JRadioButton Sonic = new JRadioButton("Sonic (30$)");
+                		JRadioButton Sonic = new JRadioButton("Sonic(50$)");
                         ButtonGroup items1 =  new  ButtonGroup();
                         items1.add(Mario);
                         items1.add(Sonic);
@@ -581,7 +581,7 @@ public class GameStore extends JFrame implements ActionListener {
                             {
                             	if(physical.isSelected())
                             	{
-                            		VideoGame v3 = new VideoGame('P', "Sonic", 30);
+                            		VideoGame v3 = new VideoGame('P', "Sonic", 50);
                                     if (purchase1.addProducts(v3))
                                     	JOptionPane.showMessageDialog(this,"Added successfully");
 
@@ -591,7 +591,7 @@ public class GameStore extends JFrame implements ActionListener {
                             	else
                             		if(digital.isSelected())
                                 	{
-                                		VideoGame v4 = new VideoGame('D', "Sonic", 30);
+                                		VideoGame v4 = new VideoGame('D', "Sonic", 50);
                                         if (purchase1.addProducts(v4))
                                         	JOptionPane.showMessageDialog(this,"Added successfully");
 
@@ -632,7 +632,7 @@ public class GameStore extends JFrame implements ActionListener {
                                 itemsPanel2.add(new JLabel("What is your preferred device release year?"));
                                 itemsPanel2.add(YEAR1);
                                 itemsPanel2.add(YEAR2);
-                                int show2 = JOptionPane.showConfirmDialog(this,itemsPanel2,"games",JOptionPane.OK_CANCEL_OPTION);
+                                int show2 = JOptionPane.showConfirmDialog(this,itemsPanel2,"Electron icItems",JOptionPane.OK_CANCEL_OPTION);
                                 if(show2==JOptionPane.OK_OPTION)
                                 {
                                 	if(YEAR1.isSelected())
@@ -669,7 +669,7 @@ public class GameStore extends JFrame implements ActionListener {
                                     itemsPanel2.add(new JLabel("What is your preferred device release year?"));
                                     itemsPanel2.add(YEAR1);
                                     itemsPanel2.add(YEAR2);
-                                    int show2 = JOptionPane.showConfirmDialog(this,itemsPanel2,"games",JOptionPane.OK_CANCEL_OPTION);
+                                    int show2 = JOptionPane.showConfirmDialog(this,itemsPanel2,"Electron icItems",JOptionPane.OK_CANCEL_OPTION);
                                     if(show2==JOptionPane.OK_OPTION)
                                     {
                                     	if(YEAR1.isSelected())
@@ -684,7 +684,7 @@ public class GameStore extends JFrame implements ActionListener {
                                           itemsPanel3.add(new JLabel("What storage is best for you?"));
                                           itemsPanel3.add(storage1);
                                           itemsPanel3.add(storage2);
-                                          int show3 = JOptionPane.showConfirmDialog(this,itemsPanel3,"games",JOptionPane.OK_CANCEL_OPTION);
+                                          int show3 = JOptionPane.showConfirmDialog(this,itemsPanel3,"Electron icItems",JOptionPane.OK_CANCEL_OPTION);
                                           if(show3==JOptionPane.OK_OPTION)
                                           {
                                         	  if(storage1.isSelected())
@@ -699,7 +699,7 @@ public class GameStore extends JFrame implements ActionListener {
                                                 itemsPanel4.add(new JLabel("without CD Port OR with CD Port"));
                                                 itemsPanel4.add(cd);
                                                 itemsPanel4.add(nocd);
-                                                int show4 = JOptionPane.showConfirmDialog(this,itemsPanel4,"games",JOptionPane.OK_CANCEL_OPTION);
+                                                int show4 = JOptionPane.showConfirmDialog(this,itemsPanel4,"Electron icItems",JOptionPane.OK_CANCEL_OPTION);
                                                 if(show4==JOptionPane.OK_OPTION)
                                                 {
                                                 	if(cd.isSelected())
@@ -729,7 +729,7 @@ public class GameStore extends JFrame implements ActionListener {
                                               itemsPanel3.add(new JLabel("What storage is best for you?"));
                                               itemsPanel3.add(storage1);
                                               itemsPanel3.add(storage2);
-                                              int show3 = JOptionPane.showConfirmDialog(this,itemsPanel3,"games",JOptionPane.OK_CANCEL_OPTION);
+                                              int show3 = JOptionPane.showConfirmDialog(this,itemsPanel3,"Electron icItems",JOptionPane.OK_CANCEL_OPTION);
                                               if(show3==JOptionPane.OK_OPTION)
                                               {
                                             	  if(storage1.isSelected())
@@ -744,7 +744,7 @@ public class GameStore extends JFrame implements ActionListener {
                                                     itemsPanel4.add(new JLabel("without CD Port OR with CD Port"));
                                                     itemsPanel4.add(cd);
                                                     itemsPanel4.add(nocd);
-                                                    int show4 = JOptionPane.showConfirmDialog(this,itemsPanel4,"games",JOptionPane.OK_CANCEL_OPTION);
+                                                    int show4 = JOptionPane.showConfirmDialog(this,itemsPanel4,"Electron icItems",JOptionPane.OK_CANCEL_OPTION);
                                                     if(show4==JOptionPane.OK_OPTION)
                                                     {
                                                     	if(cd.isSelected())
@@ -783,7 +783,7 @@ public class GameStore extends JFrame implements ActionListener {
                                                         itemsPanel4.add(new JLabel("without CD Port OR with CD Port"));
                                                         itemsPanel4.add(cd);
                                                         itemsPanel4.add(nocd);
-                                                        int show4 = JOptionPane.showConfirmDialog(this,itemsPanel4,"games",JOptionPane.OK_CANCEL_OPTION);
+                                                        int show4 = JOptionPane.showConfirmDialog(this,itemsPanel4,"Electron icItems",JOptionPane.OK_CANCEL_OPTION);
                                                         if(show4==JOptionPane.OK_OPTION)
                                                         {
                                                         	if(cd.isSelected())
@@ -846,7 +846,7 @@ public class GameStore extends JFrame implements ActionListener {
              itemsPanel9.add(Controller1);
              itemsPanel9.add(Sonic1);
              itemsPanel9.add(Mario1);
-             int show9 = JOptionPane.showConfirmDialog(this,itemsPanel9,"add",JOptionPane.OK_CANCEL_OPTION);
+             int show9 = JOptionPane.showConfirmDialog(this,itemsPanel9,"Search",JOptionPane.OK_CANCEL_OPTION);
              if(show9==JOptionPane.OK_OPTION)
              {
             	 if(Mario1.isSelected())
@@ -920,4 +920,3 @@ public class GameStore extends JFrame implements ActionListener {
 
 	
 }
-
