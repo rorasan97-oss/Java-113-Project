@@ -1,5 +1,4 @@
 
-package gamestore;
 import java.io.*;
 
 public class Console extends ElectronicItem implements Serializable{
